@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.roxy.northernstar">
+
+    <!-- TODO: If your app uses Android API level 23 (Android 6.0) or above, you must also add code to request for permissions during runtime. -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/northern_star_logo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!--
+         put application credentials here.To obtain them, please register the application
+         at https://developer.here.com/develop/mobile-sdks
+        -->
+        <meta-data
+            android:name="com.here.android.maps.appid"
+            android:value="6QfjYnzLb6t7zRa8ioYP" />
+        <meta-data
+            android:name="com.here.android.maps.apptoken"
+            android:value="NQjzNsRBFPxLLIrIS58O3g" />
+        <meta-data
+            android:name="com.here.android.maps.license.key"
+            android:value="GtZoGz3d86fiAzwaOGqhtN/0rmBRrFHhdISJb/mso1YFc+8A/3Ooc6lXFw4yhoEGUsPcLtcdL1yP2RNMFawQnmWTIRegEHVwPDqXWWJI+vvYXvERHXigxPzlbVAYQUf1REl2g5Z61esrcWXawNXDaEx1DRtHgLyGM+4KH53RzvCB9G1FKM4DTIuiAiHDE34OIuZnuezO/O+3EM9G3JvbomC/iUEWsRMFB00z1og30rKyy97Y6ziul8AuEFotgi5pUdMPKyiovMVfBr2X3MW7y2s1d00zcqeslPOwqwMKAjhFLbCFneVlH6AOIASKHEgqJf5Vwy4SEKviqXYgj6nVuXaDt9gfHWdk1o6ZDuTPDLCfXb3tJ7DOdyy9xHffxE2jIr8GMF3HZZ38mRG+If/+OzW3S8uy6VYgk1KQJCuKUpLVQ2OFJUnwsWYinZ++Xmv3mgPbPQNTnskblVuQnvmL47Ptlj/fmKPPWtdXdkuvZx/YavIYdzHnF1EQHtEUwLXS6yiS21fdiTpgJWjqBE1dcr0oXNNz/caE4DRozlfxCN54UZVfultz6VNEdSes9E6C+xIVZMF6MeJMx6NeFyjCPWqh8zPADk8r3dT0zG5U1jDKtv8DCwoFqud9Ktz8u8J/jUmXIvlonm0BETQm8Uc1pJ03ieSIwNdl3zqe2/DdUpo=" />
+        <meta-data
+            android:name="INTENT_NAME"
+            android:value="com.roxy.northernstar.action" />
+
+        <service
+            android:name="com.here.android.mpa.service.MapService"
+            android:exported="false"
+            android:label="com.roxy.northernstar.label">
+            <intent-filter>
+                <action android:name="com.roxy.northernstar.action" />
+            </intent-filter>
+        </service>
+        <!-- TODO: Oreo onwards when an app goes into the background, it has a window of several minutes in which it is still allowed to create and use services -->
+        <!--
+           <service
+               android:name="com.here.android.mpa.service.MapService"
+               android:label="HereMapService"
+               android:process="global.Here.Map.Service.v3"
+               android:exported="true" >
+               <intent-filter>
+                   <action android:name="com.here.android.mpa.service.MapService.v3" >
+                   </action>
+               </intent-filter>
+           </service>
+        -->
+        <!-- <activity android:name=".MainActivity"></activity> -->
+        <!-- <activity android:name=".GeocodingMainActivity"></activity> -->
+        <!-- <activity -->
+        <!-- android:name=".GravityActivity" -->
+        <!-- android:label="@string/title_activity_gravity" -->
+        <!-- android:theme="@style/AppTheme.NoActionBar" /> -->
+        <!-- <activity -->
+        <!-- android:name=".GravityActivity" -->
+        <!-- android:label="@string/title_activity_gravity" -->
+        <!-- android:theme="@style/AppTheme.NoActionBar" /> -->
+        <!--<activity android:name=".ResultListActivity" />-->
+        <!--<activity android:name=".GeocodeMain"></activity>-->
+    </application>
+
+</manifest>

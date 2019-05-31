@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="16dp"
+        android:paddingTop="16dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="16dp"
+        tools:context=".MapActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="41dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/BtnGeocode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GeoCode" />
+
+            <TextView
+                android:id="@+id/resultTextView"
+                android:layout_width="153dp"
+                android:layout_height="30dp" />
+
+            <Button
+                android:id="@+id/BtnRevGeocode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="RevGeoCode" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/latLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:hint="X Coordinate.."
+                android:inputType="text"
+                android:padding="12dp"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/longLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:hint="Y Coordinate.."
+                android:inputType="text"
+                android:padding="12dp"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <!--<ListView
+            android:id="@android:id/list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryDark" />-->
+
+        <LinearLayout
+            android:id="@+id/headerLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp">
+
+            <EditText
+                android:id="@+id/query"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Destination..."
+                android:inputType="text"
+                android:padding="12dp"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/submitbtn"
+                android:layout_width="79dp"
+                android:layout_height="43dp"
+                android:layout_alignParentEnd="true"
+                android:layout_weight="8"
+                android:padding="12dp"
+                android:src="@mipmap/ic_launcher_round"
+                android:visibility="visible" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/aroundRequestBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Around" />
+
+            <Button
+                android:id="@+id/exploreRequestBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Explore" />
+
+            <Button
+                android:id="@+id/hereRequestBtn"
+                android:layout_width="92dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Here " />
+
+            <Button
+                android:id="@+id/searchRequestBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Search" />
+
+        </LinearLayout>
+
+        <!--<fragment-->
+            <!--class="com.here.android.mpa.mapping.SupportMapFragment"-->
+            <!--android:id="@+id/mapfragment"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="227dp"-->
+            <!--android:layout_weight="2" />-->
+
+        <RelativeLayout
+            android:id="@+id/startNavigationLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:gravity="center_vertical|center_horizontal">
+            <fragment
+                class="com.here.android.mpa.mapping.SupportMapFragment"
+                android:id="@+id/mapfragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="2" />
+            <ImageView
+                android:id="@+id/navigateIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/mapfragment"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:gravity="end"
+                android:background="#022334"
+                android:src="@mipmap/ic_launcher_round" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/textStartNav"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/mapfragment"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="3dp"
+                android:layout_toEndOf="@+id/navigateIcon"
+                android:background="@color/colorPrimary"
+                android:gravity="end"
+                android:text="Start Navigation"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</ScrollView>

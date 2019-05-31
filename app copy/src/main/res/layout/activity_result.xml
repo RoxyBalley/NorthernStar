@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="fill_parent"
+    android:padding="4dp"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    tools:context=".MapActivity">
+
+
+    <!-- Map Fragment embedded with the map object -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="41dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/BtnGeocode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GeoCode" />
+
+        <TextView
+            android:id="@+id/resultTextView"
+            android:layout_width="153dp"
+            android:layout_height="30dp" />
+
+        <Button
+            android:id="@+id/BtnRevGeocode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="RevGeoCode" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/latLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:hint="X Coordinate.."
+            android:inputType="text"
+            android:padding="8dp"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/longLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:hint="Y Coordinate.."
+            android:inputType="text"
+            android:padding="12dp"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingTop="12dp"
+        android:paddingBottom="8dp">
+
+        <EditText
+            android:id="@+id/query"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Destination..."
+            android:inputType="text"
+            android:layout_weight="8"
+            android:padding="12dp"
+            android:textSize="16sp" />
+
+        <Button
+            android:text="GO"
+            android:id="@+id/submitbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:padding="12dp"
+            android:src="@mipmap/ic_launcher_round"
+            android:visibility="visible" />
+
+    </LinearLayout>
+    <!--<LinearLayout-->
+        <!--android:orientation="horizontal"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content">-->
+
+        <!--<Button-->
+            <!--android:text="Around"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/aroundRequestBtn"-->
+            <!--android:layout_weight="1" />-->
+
+        <!--<Button-->
+            <!--android:text="Explore"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/exploreRequestBtn"-->
+            <!--android:layout_weight="1" />-->
+
+        <!--<Button-->
+            <!--android:text="Here "-->
+            <!--android:layout_width="92dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/hereRequestBtn"-->
+            <!--android:layout_weight="1" />-->
+
+        <!--<Button-->
+            <!--android:text="Search"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/searchRequestBtn"-->
+            <!--android:layout_weight="1" />-->
+
+    <!--</LinearLayout>-->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <fragment
+            class="com.here.android.mpa.mapping.SupportMapFragment"
+            android:id="@+id/mapfragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            android:text="Start Navigation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textStartNav"
+            android:padding="8dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorPrimary"
+            android:layout_centerHorizontal="true"
+            android:visibility="visible" />
+
+    </RelativeLayout>
+
+</LinearLayout>

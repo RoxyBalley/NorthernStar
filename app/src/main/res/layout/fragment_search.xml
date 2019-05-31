@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".SearchFrag">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="41dp"
+        android:visibility="gone"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/BtnGeocode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GeoCode" />
+
+        <TextView
+            android:id="@+id/resultTextView"
+            android:layout_width="153dp"
+            android:layout_height="30dp" />
+
+        <Button
+            android:id="@+id/BtnRevGeocode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="RevGeoCode" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/latLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:hint="X Coordinate.."
+            android:inputType="text"
+            android:padding="8dp"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/longLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:hint="Y Coordinate.."
+            android:inputType="text"
+            android:padding="12dp"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingTop="12dp"
+        android:paddingBottom="8dp">
+
+        <AutoCompleteTextView
+            android:id="@+id/query"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Destination..."
+            android:inputType="text"
+            android:layout_weight="8"
+            android:padding="12dp"
+            android:textSize="16sp" />
+        <Button
+            android:text="GO"
+            android:id="@+id/submitbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:padding="12dp"
+            android:src="@mipmap/ic_launcher_round"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerViewPlace"
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <RelativeLayout
+        android:id="@+id/maplayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:layout_weight="1">
+
+        <com.here.android.mpa.mapping.MapView
+            android:id="@+id/mapfragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            android:text="Start Navigation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/navigationBtn"
+            android:padding="8dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorPrimary"
+            android:layout_centerHorizontal="true"
+            android:visibility="visible" />
+
+    </RelativeLayout>
+
+</LinearLayout>
